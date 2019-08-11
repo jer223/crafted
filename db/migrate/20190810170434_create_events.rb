@@ -4,7 +4,7 @@ class CreateEvents < ActiveRecord::Migration[5.2]
       t.string :local
       t.text :description
       t.string :address
-      t.integer :date
+      t.string :date
       t.timestamps
     end
     add_index :events, :date

@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 2019_08_10_170434) do
     t.string "local"
     t.text "description"
     t.string "address"
-    t.integer "date"
+    t.string "date"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["date"], name: "index_events_on_date"
