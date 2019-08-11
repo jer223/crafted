@@ -1,5 +1,16 @@
+<div class="hero">
+  <br />
+  <div class="frosty col-10 offset-1 text-center">
+    <br />
+    <h1>Welcome to South Florida's Best Craft Beer Hub</h1>
+    <h2>Bottle shares, new releases, fests</h2>
+    <br />
+    <%= link_to 'Learn More', '#', class: 'btn btn-success' %>
+    <br /><br />
+  </div>
+</div>  
 <% @events.each do |event| %>
-  <div class="booyah-box col-10 offset-1">
+  <div class="booyah-box col-10 offset-1 text-center">
     <h1><%= event.local %></h1>
     <i><%= event.description %></i><br /><br />
     <p><%= event.address %></p><br />
