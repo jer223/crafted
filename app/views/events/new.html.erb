@@ -1,3 +1,11 @@
 <div class="booyah-box col-10 offset-1">
   <h1>Enter Your Event Here!</h1>
+  <%= simple_form_for @event do |f| %>
+    <%= f.input :local %>
+    <%= f.input :description %>
+    <%= f.input :address %>
+    <%= f.input :date %>
+    <br />
+    <%= f.submit 'Create', class: 'btn btn-success' %>
+  <% end %>
 </div>
