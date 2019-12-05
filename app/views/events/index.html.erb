@@ -4,16 +4,41 @@
     <br />
     <h1>Welcome to South Florida's Best Craft Beer Hub</h1>
     <h2>Bottle shares, new releases, fests</h2>
-    <br />
-    <%= link_to '#', '#', class: 'btn btn-success' %>
     <br /><br />
   </div>
 </div>  
-<% @events.each do |event| %>
-  <div class="booyah-box col-10 offset-1 text-center">
+
+<br/ ><br />
+<div class="booyah-box col-10 offset-1 text-center">
+  <% @events.each do |event| %>
     <h1><%= event.local %></h1>
     <i><%= event.description %></i><br /><br />
     <p><%= event.address %></p><br />
     <p><%= event.date %></p><br />
+    <% if @events.latitude.present? && @events.longitude.present? %>
+    <script>
+      function initMap() {
+        var myLatLng = {lat: <%= @events.latitude %>, lng: <%= @events.longitude %>};
+
+        var map = new google.maps.Map(document.getElementById('map'), {
+          zoom: 12,
+          center: myLatLng
+        });
+
+        var marker = new google.maps.Marker({
+          position: myLatLng,
+          map: map,
+          title: 'Hello World!'
+        });
+      }
+    </script>
+
+    <script async defer
+      src="https://maps.googleapis.com/maps/api/js?key=AIzaSyDyvuCxl5wDi7BYjZjBcOMQ6oY2p0KBDzk&callback=initMap">
+    </script>
+    <% end %>
+    <div id="map"></div>
+    <% end %>  
+    <br />
   </div>
-<% end %>
+</div>  

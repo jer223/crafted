@@ -1,6 +1,9 @@
 class Event < ApplicationRecord
-#  validates :local, presence :true
-#  validates :date, presence :true
+
   geocoded_by :address
   after_validation :geocode
+
+#  validates :local, presence :true
+#  validates :date, presence :true
+  
 end
